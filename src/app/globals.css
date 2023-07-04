@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+.scrollBtn {
+  position: relative;
+  padding: 10px 12px;
+  top: 0;
+  width: 30px;
+  height: 50px;
+  margin-left: -15px;
+  border: 1px solid #000;
+  border-radius: 50px;
+  box-sizing: border-box;
+  animation: bounce2 0.9s 1.5s infinite ease-out alternate;
+}
+
+.scrollBtn::before {
+  position: absolute;
+  left: 50%;
+  content: "";
+  width: 6px;
+  height: 6px;
+  margin-left: -3px;
+  background-color: #b7bfef;
+  border-radius: 100%;
+  animation: bounce 0.5s 1.5s infinite ease-out alternate;
+}
+
+@keyframes bounce {
+  0% {
+    top: 6px;
+  }
+  100% {
+    top: 12px;
+  }
+}
+
+@keyframes bounce2 {
+  0% {
+    top: 0px;
+  }
+  100% {
+    top: 4px;
+  }
+}
